@@ -1,8 +1,36 @@
 import Head from 'next/head';
+import { Avatar } from 'next-auth/react';
+import { BlogPost } from '../components/BlogPost';
 
-function HomePage() {
+function Header() {
   return (
-    <div>
+    <header>
+      <h1>Marc Hooftman</h1>
+      <Avatar src="/marc-avatar.jpg" alt="Marc Hooftman" />
+    </header>
+  );
+}
+
+function BlogFeed() {
+  return (
+    <section className="blog-feed">
+      <h2>Latest Posts</h2>
+      <BlogPost />
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; 2026 Marc Hooftman</p>
+    </footer>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <div className="container">
       <Head>
         <title>Marc Hooftman - Personal Site</title>
         <meta name="description" content="Welcome to Marc Hooftman's personal website." />
@@ -11,11 +39,10 @@ function HomePage() {
       </Head>
 
       <main>
-        <h1>Welcome to Marc’s Personal Site</h1>
-        <p>This is the homepage.</p>
+        <Header />
+        <BlogFeed />
+        <Footer />
       </main>
     </div>
   );
 }
-
-export default HomePage;
