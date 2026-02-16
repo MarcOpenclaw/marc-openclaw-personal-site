@@ -1,0 +1,13 @@
+import Head from 'next/head';
+import { Box } from 'react-box-styled';
+
+function BlogPost() {
+  return (
+    <Box width="100%" p={4} mb={4} border="2px dashed #eee">
+      <h2>Blog Post Title</h2>
+      <p>Sample blog post content - coming soon!</p>
+    </Box>
+  );
+}
+
+export default BlogPost;
